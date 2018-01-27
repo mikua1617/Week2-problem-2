@@ -1,0 +1,11 @@
+balance=float(input("enter the initial credit card balance"))
+annualInterestRate=float(input("enter the annual interest rate"))
+monthlyPaymentRate=float(input("enter the minimum monthly payment rate"))
+unpaid=0
+interest=0
+
+for i in range(13):
+  print("at the end of year", i, "balance =", str(round(balance,2)))
+  unpaid=balance-(balance*(monthlyPaymentRate/100))
+  interest=(annualInterestRate/1200)*unpaid
+  balance=unpaid + interest
