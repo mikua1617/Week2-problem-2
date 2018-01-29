@@ -1,8 +1,3 @@
-import math
-def roundup(x):
-    return int(math.ceil(x / 10.0)) * 10
-
-
 balance=float(input("enter the initial credit card balance"))
 annualInterestRate=float(input("enter the annual interest rate"))
 fixed=1
@@ -15,6 +10,6 @@ while balance>0:
   balance=temp
   for i in range(13):
     balance=(balance-fixed)*rate
-  fixed+=1  
+  fixed+=10
   
-print("lowest payment:", roundup(fixed)) 
+print("lowest payment:", fixed-1)
