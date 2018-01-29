@@ -1,0 +1,26 @@
+balance=float(input("enter the initial credit card balance"))
+annualInterestRate=float(input("enter the annual interest rate"))
+fixed=1
+monthlyInterestRate=annualInterestRate/1200
+unpaid=0
+interest=0
+rate=1+(monthlyInterestRate)
+temp=balance
+
+low=balance/12
+high=(balance * ((1 + monthlyInterestRate)**12)) / 12.0
+
+
+while balance>0:
+  fixed=(low+high)/2
+  balance=temp
+  for i in range(13):
+    balance=(balance-fixed)*rate
+  if balance>0:
+    low=fixed
+  elif balance<0:
+    high=fixed
+  elif abs(balance-0)<=0.01:
+    break
+  
+print("Lowest Payment:", fixed)    
