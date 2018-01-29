@@ -11,7 +11,7 @@ low=balance/12
 high=(balance * ((1 + monthlyInterestRate)**12)) / 12.0
 
 
-while balance>0:
+while abs(balance-0)>=10:
   fixed=(low+high)/2
   balance=temp
   for i in range(13):
@@ -20,7 +20,6 @@ while balance>0:
     low=fixed
   elif balance<0:
     high=fixed
-  elif abs(balance-0)<=0.01:
-    break
+
   
 print("Lowest Payment:", fixed)    
